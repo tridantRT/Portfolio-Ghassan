@@ -103,26 +103,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.1 });
   faders.forEach(fader => appearOnScroll.observe(fader));
 
-  // === Image Modal ===
+  // === Image/Video Modal ===
   const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
   const modalDesc = document.getElementById("modalDescription");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
   const closeBtn = document.querySelector(".close");
 
-  let currentImages = [];
+  let currentItems = [];
   let currentIndex = 0;
   let currentDescription = "";
 
-  function openModal(images, description, index = 0) {
-    currentImages = images.map(img => img.trim());
+  function openModal(items, description, index = 0) {
+    currentItems = items.map(i => i.trim());
     currentIndex = index;
     currentDescription = description;
-
     modal.style.display = "block";
-    modalImg.src = currentImages[currentIndex];
-    modalDesc.textContent = currentDescription;
+    showCurrent();
   }
 
   function closeModal() {
@@ -130,18 +127,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.closeModal = closeModal;
 
-  function showNext() {
-    if (!currentImages.length) return;
-    currentIndex = (currentIndex + 1) % currentImages.length;
-    modalImg.src = currentImages[currentIndex];
+  function showCurrent() {
+    const src = currentItems[currentIndex];
     modalDesc.textContent = currentDescription;
+
+    // Remove previous content
+    const oldContent = document.getElementById("modalContent");
+    if (oldContent) oldContent.remove();
+
+    let newContent;
+    if (src.endsWith(".mp4")) {
+      newContent = document.createElement("video");
+      newContent.src = src;
+      newContent.controls = true;
+      newContent.autoplay = true;
+    } else {
+      newContent = document.createElement("img");
+      newContent.src = src;
+    }
+    newContent.id = "modalContent";
+    newContent.className = "modal-content";
+    modal.insertBefore(newContent, modalDesc);
+  }
+
+  function showNext() {
+    if (!currentItems.length) return;
+    currentIndex = (currentIndex + 1) % currentItems.length;
+    showCurrent();
   }
 
   function showPrev() {
-    if (!currentImages.length) return;
-    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-    modalImg.src = currentImages[currentIndex];
-    modalDesc.textContent = currentDescription;
+    if (!currentItems.length) return;
+    currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+    showCurrent();
   }
 
   prevBtn.addEventListener("click", showPrev);
@@ -158,11 +176,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Attach modal to project cards
   document.querySelectorAll(".project-card").forEach(card => {
-    const images = card.getAttribute("data-images")?.split(",") || [];
+    const items = card.getAttribute("data-images")?.split(",") || [];
     const description = card.querySelector(".project-info p")?.innerText || "";
 
     card.addEventListener("click", () => {
-      if (images.length) openModal(images, description);
+      if (items.length) openModal(items, description);
     });
   });
 });
