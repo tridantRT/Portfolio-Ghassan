@@ -277,3 +277,43 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* for about me part of home page */
+.about-me {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap; /* makes it responsive on smaller screens */
+}
+
+.about-text {
+  flex: 1 1 50%;
+}
+
+.about-photo {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Optional: smaller screens */
+@media (max-width: 768px) {
+  .about-me {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-photo {
+    margin-top: 1.5rem;
+  }
+}
