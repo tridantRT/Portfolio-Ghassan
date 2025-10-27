@@ -12,7 +12,7 @@ window.addEventListener("scroll", () => {
 const translations = {
   en: {
     pageTitle: "Home",
-    studioTitle: "Studio Name / Architect Name",
+    studioTitle: "Studio Name / Ghassan Yahia",
     tagline: "Simple architecture portfolio",
     navHome: "Home",
     navIntro: "Introduction",

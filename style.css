@@ -317,3 +317,52 @@ footer {
     margin-top: 1.5rem;
   }
 }
+
+
+
+/* FOR CONTACT PAGE */
+
+/* Social icons styling */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-icons a {
+  color: #333;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0077b5; /* LinkedIn blue as default hover color */
+  transform: scale(1.1);
+}
+
+/* Optional: individual hover colors */
+.social-icons a[aria-label="Instagram"]:hover {
+  color: #e4405f;
+}
+
+.social-icons a[aria-label="LinkedIn"]:hover {
+  color: #0077b5;
+}
+
+.social-icons a[aria-label="Freelancer"]:hover {
+  color: #29b2fe;
+}
+
+/* Contact intro styling */
+.contact-intro {
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.contact-intro p {
+  margin-bottom: 12px;
+}

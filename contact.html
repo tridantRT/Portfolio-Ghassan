@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="navContact">Contact</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!--  Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
   <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1 data-i18n="studioTitle">Studio Name / Architect Name</h1>
+    <h1 data-i18n="studioTitle">Studio Name / Ghassan Yahia</h1>
     <p data-i18n="tagline">Simple architecture portfolio</p>
-    <div class="language-switcher">
+    <div class="language-switcher"> 
       <button onclick="setLanguage('en')">EN</button>
       <button onclick="setLanguage('fr')">FR</button>
     </div>
@@ -27,14 +31,43 @@
   <main>
     <section>
       <h2 data-i18n="navContact">Contact</h2>
-      <p data-i18n="contactText">
-        If you'd like to get in touch about collaborations, feedback, or job opportunities, feel free to email me at <strong>email@example.com</strong>.
+      
+        <div class="contact-intro">
+          <p>
+            Interested in discussing a project, collaboration, or architectural concept? I’d love to connect.
+          </p>
+          <p>
+            Whether it’s residential design, urban planning, or conceptual visualization, I’m always open to new ideas and creative exchanges.
+          </p>
+          <p>
+            Feel free to reach out by email or connect through my social platforms below.
+          </p>
+        </div>
+
       </p>
+
+      <div class="social-icons">
+        <a href="https://www.freelancer.com/u/ghassany4" target="_blank" aria-label="Freelancer">
+          <i class="fa-solid fa-briefcase fa-2x"></i>
+        </a>
+        <a href="https://www.instagram.com/yahia_ghassan01" target="_blank" aria-label="Instagram">
+          <i class="fa-brands fa-instagram fa-2x"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/kias-yahia-ghassan-3114b4312" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin fa-2x"></i>
+        </a>
+      </div>
+    </section>
+    <section>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:yahia.ghessan@gmail.com">yahia.ghessan@gmail.com</a></p>
+        <p>Phone: <a href="tel:+213796010544">+213 796010544</a></p>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 <span data-i18n="studioTitle">Studio Name</span>. <span data-i18n="footerRights">All rights reserved.</span></p>
+    <p>&copy; 2025 <span data-i18n="studioTitle">Yahia Ghassan</span>. <span data-i18n="footerRights">All rights reserved.</span></p>
   </footer>
 </body>
 </html>
