@@ -8,8 +8,36 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
   color: #333;
+}
+
+/* Update the base gradient background */
+body {
+  background: linear-gradient(
+    135deg,
+    #e6ecff 0%,
+    #b4c4ff 20%,
+    #8aa6ff 40%,
+    #7094ff 60%,
+    #b4c4ff 80%,
+    #e6ecff 100%
+  );
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* Keep existing animation keyframes */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* === Layout Structure === */
@@ -26,18 +54,49 @@ main {
   padding: 3rem 2rem;
 }
 
+/* Style the main content sections */
+section {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(147, 112, 219, 0.2);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
 /* === Header === */
 header {
-  background-color: #111;
-  color: #fff;
-  padding: 1.5rem;
+  background: linear-gradient(
+    to right,
+    #1a1b4a 0%,    /* More blue */
+    #232464 50%,   /* More blue */
+    #25265b 100%   /* More blue */
+  );
+  color: white;
+  padding: 2rem;
   text-align: center;
-  position: relative; /* for language switcher */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
 /* === Navigation Bar === */
 nav {
-  background-color: #222;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(147, 112, 219, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -45,9 +104,37 @@ nav {
 }
 
 nav a {
-  color: #fff;
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  color: #1a1b4a;  /* Darker blue */
   text-decoration: none;
   font-weight: bold;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #4154af;  /* Medium blue */
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover {
+  color: #4154af;  /* Medium blue */
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: #4154af;  /* Medium blue */
+  border-bottom: 2px solid #4154af;
 }
 
 nav.sticky {
@@ -65,6 +152,33 @@ nav.sticky {
   margin-top: 2rem;
 }
 
+/* Small info box placed above the project sections */
+.gallery-info {
+  max-width: 1000px;
+  margin: 1.25rem auto;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.85);
+  border-left: 6px solid #6a75e6; /* blueish-purple accent */
+  border-radius: 6px;
+  color: #222;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 18px rgba(74,84,160,0.06);
+  text-align: center;
+}
+
+/* Slightly smaller on small screens */
+@media (max-width: 600px) {
+  .gallery-info { font-size: 0.9rem; padding: 0.6rem; margin: 0.8rem; }
+}
+
+/* === Project Preview === */
+.project-preview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;  /* This adds space between the project boxes */
+  padding: 1rem;
+}
+
 /* === Project Cards === */
 .project,
 .project-card {
@@ -79,9 +193,47 @@ nav.sticky {
   margin: 0;
 }
 
+.project {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project-card {
+  position: relative;
+  border: none;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(45deg, #4154af, #6a75e6, #8b9bed, #4154af);
+  background-size: 400% 400%;
+  z-index: -1;
+  border-radius: 10px;
+  animation: gradientBorder 3s ease infinite;
+}
+
+@keyframes gradientBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .project-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(65, 84, 175, 0.2);
+  border-color: #4154af;
 }
 
 .project img,
@@ -89,12 +241,18 @@ nav.sticky {
   width: 100%;
   border-radius: 10px;
   display: block;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.5s ease;
+  filter: grayscale(20%);
 }
 
 .project img:hover {
   transform: scale(1.05);
   cursor: pointer;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.03);
+  filter: grayscale(0%);
 }
 
 .project-info {
@@ -236,10 +394,33 @@ nav.sticky {
 
 /* === Footer === */
 footer {
-  background-color: #111;
-  color: #fff;
+  background: linear-gradient(
+    to right,
+    #1a1b3a 0%,
+    #232454 50%,
+    #1a1b3a 100%
+  );
+  color: white;
+  padding: 1.5rem;
   text-align: center;
-  padding: 2rem;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Optional: Add hover effect for any footer links */
+footer a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+footer a:hover {
+  opacity: 0.8;
 }
 
 /* === Language Switcher === */
@@ -336,7 +517,7 @@ footer {
 }
 
 .social-icons a:hover {
-  color: #0077b5; /* LinkedIn blue as default hover color */
+  color: #4154af;  /* More blue */
   transform: scale(1.1);
 }
 
@@ -365,4 +546,105 @@ footer {
 
 .contact-intro p {
   margin-bottom: 12px;
+}
+
+/* Style the headings with a purple underline */
+h2 {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4154af, #6a75e6);
+}
+
+/* === Scroll Indicator === */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, #8b9bed, #6a75e6);
+  z-index: 1000;
+}
+
+/* Replace the architectural grid with more prominent design */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Main blueprint grid */
+    linear-gradient(90deg, rgba(65, 105, 225, 0.2) 1px, transparent 1px),
+    linear-gradient(rgba(65, 105, 225, 0.2) 1px, transparent 1px),
+    /* Secondary measurement grid */
+    linear-gradient(90deg, rgba(65, 105, 225, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(65, 105, 225, 0.1) 1px, transparent 1px),
+    /* Technical drawing circles */
+    radial-gradient(circle at 50px 50px, rgba(65, 105, 225, 0.05) 8px, transparent 8px),
+    /* Construction lines */
+    linear-gradient(45deg, rgba(65, 105, 225, 0.08) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(65, 105, 225, 0.08) 1px, transparent 1px);
+  background-size: 
+    50px 50px,    /* Main grid - smaller spacing */
+    50px 50px,
+    10px 10px,    /* Secondary grid - finer detail */
+    10px 10px,
+    100px 100px,  /* Circles pattern */
+    30px 30px,    /* Diagonal lines */
+    30px 30px;
+  background-position: center center;
+  z-index: -1;
+  animation: architecturalFloat 25s infinite linear;
+}
+
+@keyframes architecturalFloat {
+  0% {
+    background-position: 
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  100% {
+    background-position: 
+      50px 50px,
+      50px 50px,
+      10px 10px,
+      10px 10px,
+      100px 100px,
+      30px 30px,
+      30px 30px;
+  }
+}
+
+/* Remove the measurement markers and add blueprint decoration */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 150px;
+  height: 150px;
+  background: 
+    linear-gradient(0deg, rgba(65, 105, 225, 0.15) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(65, 105, 225, 0.15) 50%, transparent 50%),
+    radial-gradient(circle at center, rgba(65, 105, 225, 0.2) 0%, transparent 70%);
+  border: 2px solid rgba(65, 105, 225, 0.2);
+  border-radius: 50%;
+  transform: rotate(45deg);
+  opacity: 0.7;
+  pointer-events: none;
 }
