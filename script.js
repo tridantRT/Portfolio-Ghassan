@@ -17,7 +17,7 @@ const translations = {
     tagline: "Architecture Portfolio",
     navHome: "Home",
     navProjects: "Projects",  // Moved up
-    navIntro: "Introduction", // Moved down
+    navIntro: "Information", // Moved down
     navContact: "Contact",
     welcome: "Welcome",
     aboutMe: "About Me",
@@ -61,7 +61,8 @@ const translations = {
     landscapeDesc: "Exterior landscape design for a house garden, featuring a covered parking area, a seating zone, and a playground for children.",
     hotelTitle: "3D Design of a Hotel",
     hotelDesc: "One of my freelance projects for a client from India was 3D design of the hotel's facades and interior spaces.",
-    
+    HousingPromotionTitle: "24 Housing Promotion",
+    HousingPromotionDesc: "Design and architectural visualization of a residential building with 24 apartments for a real estate developer in Mila, Algeria.",
     // BIM Project Section
     bimIntro: "In this section, I showcase the projects I supervised in detail, where I implemented BIM in the design process.",
     sportsParkTitle: "Tadrar-Grarem Gouga Sports and Leisure Park",
@@ -86,7 +87,7 @@ const translations = {
     tagline: "Architecture Portfolio",
     navHome: "Accueil",
     navProjects: "Projets",    // Moved up
-    navIntro: "Introduction",  // Moved down
+    navIntro: "Information",  // Moved down
     navContact: "Contact",
     welcome: "Bienvenue",
     aboutMe: "À propos de moi",
@@ -105,7 +106,7 @@ const translations = {
     contact1: "Intéressé à discuter d'un projet, d'une collaboration ou d'un concept architectural? J'aimerais me connecter.",
     contact2: "Que ce soit pour la conception résidentielle, la planification urbaine ou la visualisation conceptuelle, je suis toujours ouvert à de nouvelles idées et échanges créatifs.",
     contact3: "N'hésitez pas à me contacter par e-mail ou à vous connecter via mes plateformes sociales ci-dessous.",
-    
+
     // Interior Design Section
     interiorIntro: "Dans cette section, vous trouverez mes designs intérieurs, y compris les plans d'étage, les dessins en coupe et les rendus 3D.",
     interiorDesignRenderTitle: "Rendu de Design D'Intérieur",
@@ -130,7 +131,8 @@ const translations = {
     landscapeDesc: "Design paysager extérieur pour un jardin de maison, comprenant un parking couvert, une zone de détente et une aire de jeux pour enfants.",
     hotelTitle: "Design 3D d'un Hôtel",
     hotelDesc: "Un de mes projets freelance pour un client d'Inde était la conception 3D des façades et des espaces intérieurs de l'hôtel.",
-    
+    HousingPromotionTitle: "Promotion de 24 Logements",
+    HousingPromotionDesc: "Conception et visualisation architecturale d'un immeuble résidentiel de 24 appartements pour un promoteur immobilier à Mila, en Algérie.",
     // BIM Project Section
     bimIntro: "Dans cette section, je présente les projets que j'ai supervisés en détail, où j'ai implémenté le BIM dans le processus de conception.",
     sportsParkTitle: "Parc des Sports et Loisirs Tadrar-Grarem Gouga",
