@@ -65,6 +65,8 @@ const translations = {
     hotelDesc: "One of my freelance projects for a client from India was 3D design of the hotel's facades and interior spaces.",
     HousingPromotionTitle: "24 Housing Promotion",
     HousingPromotionDesc: "Design and architectural visualization of a residential building with 24 apartments for a real estate developer in Mila, Algeria.",
+    TilesTitle: "Villa Facade With a Tiled Roof",
+    TilesDesc: "Design of a villa façade for one of our clients. The client specified that the villa should have a tiled roof.",
     // BIM Project Section
     bimIntro: "In this section, I showcase the projects I supervised in detail, where I implemented BIM in the design process.",
     sportsParkTitle: "Tadrar-Grarem Gouga Sports and Leisure Park",
@@ -137,6 +139,8 @@ const translations = {
     hotelDesc: "Un de mes projets freelance pour un client d'Inde était la conception 3D des façades et des espaces intérieurs de l'hôtel.",
     HousingPromotionTitle: "Promotion de 24 Logements",
     HousingPromotionDesc: "Conception et visualisation architecturale d'un immeuble résidentiel de 24 appartements pour un promoteur immobilier à Mila, en Algérie.",
+    TilesTitle: "Façade de Villa avec Toit en Tuiles",
+    TilesDesc: "Conception de la façade d'une villa pour l'un de nos clients. Le client a spécifié que la villa devait avoir un toit en tuiles.",
     // BIM Project Section
     bimIntro: "Dans cette section, je présente les projets que j'ai supervisés en détail, où j'ai implémenté le BIM dans le processus de conception.",
     sportsParkTitle: "Parc des Sports et Loisirs Tadrar-Grarem Gouga",
