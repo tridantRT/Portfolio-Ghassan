@@ -76,7 +76,7 @@ const translations = {
     residentialVilla2Title: "Modern Villa – Series 2",
     residentialVilla2Desc: "A multi-sports hall project including all architectural plans, renderings, and complete quantity takeoff. Designed fully in Revit.",
     // Massing Projects Section
-    massingIntro: "This section is dedicated to parametric design projects, where I create unconventional and innovative forms.",
+    massingIntro: "This section is dedicated to design projects, where I create unconventional and innovative forms.",
     mosqueTitle: "An unconventional mosque design",
     mosqueDesc: "A unique mosque design inspired by the minarets of Islamic architecture, featuring a parametric facade. The project was designed using Rhino.Inside.Revit and visualized with Twinmotion.",
     sportsHallTitle: "Organic Multi-Sports Hall",
@@ -150,7 +150,7 @@ const translations = {
     residentialVilla2Title: "Villa Moderne – Série 2",
     residentialVilla2Desc: "Un projet de salle multisports comprenant tous les plans architecturaux, les rendus et le métré complet. Entièrement conçu dans Revit.",
     // Massing Projects Section
-    massingIntro: "Cette section est dédiée aux projets de conception paramétrique, où je crée des formes non conventionnelles et innovantes.",
+    massingIntro: "Cette section est dédiée aux projets de conception, où je crée des formes non conventionnelles et innovantes.",
     mosqueTitle: "Design non conventionnel d'une mosquée",
     mosqueDesc: "Un design unique de mosquée inspiré des minarets de l'architecture islamique, avec une façade paramétrique. Le projet a été conçu avec Rhino.Inside.Revit et visualisé avec Twinmotion.",
     sportsHallTitle: "Salle Multisports Organique",
